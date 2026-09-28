@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CUSTOM COLORS
+========================================= */
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #0f172a;
+    --accent-color: #38bdf8;
+
+    --background-color: #f8fafc;
+    --card-color: #ffffff;
+
+    --text-color: #1e293b;
+    --light-text: #64748b;
+
+    --border-color: #e2e8f0;
+}
+
+
+/* =========================================
+   GENERAL STYLING
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        #1e3a8a
+    );
+
+    color: white;
+    padding: 30px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Header title */
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+header p {
+    color: #cbd5e1;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover effect */
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+
+/* Animated underline */
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--accent-color);
+
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+    padding: 80px 0;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+
+    margin-bottom: 25px;
+
+    position: relative;
+}
+
+
+/* Heading underline */
+
+section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    background-color: var(--primary-color);
+
+    margin-top: 8px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+#about {
+    text-align: center;
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    margin: 20px 0;
+
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+#about p {
+    max-width: 750px;
+    margin: 10px auto;
+
+    color: var(--light-text);
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+#skills {
+    text-align: center;
+}
+
+#skills h3 {
+    margin: 30px 0 15px;
+    color: var(--secondary-color);
+}
+
+
+/* Flexbox */
+
+#skills ul,
+#skills ol {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    list-style: none;
+}
+
+#skills li {
+    background-color: var(--card-color);
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    border-color: var(--primary-color);
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+#projects {
+    text-align: center;
+}
+
+.project-card {
+    background-color: var(--card-color);
+
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--secondary-color);
+}
+
+.project-card p {
+    color: var(--light-text);
+
+    margin-bottom: 20px;
+}
+
+
+/* Project link */
+
+.project-link {
+    display: inline-block;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+#contact {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+#contact > p {
+    color: var(--light-text);
+
+    margin-bottom: 25px;
+}
+
+form {
+    background-color: var(--card-color);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border-color);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Submit button */
+
+.submit-btn {
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background-color: var(--secondary-color);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+footer a {
+    color: var(--accent-color);
+
+    text-decoration: none;
+
+    margin: 0 5px;
+
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 5%;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .theme-btn {
+        width: fit-content;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 1.7rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    #skills ul,
+    #skills ol {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    #skills li {
+        width: 80%;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    input,
+    textarea {
+        font-size: 0.95rem;
+    }
+}
